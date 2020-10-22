@@ -123,7 +123,7 @@ let factorial = (number) => {
 }
 
 let findAnagrams = (string) => {
-    return (string.length <= 2)? string.length === 2 ? [string, string[1] + string[0]] : [string] :
+    return (string.length <= 2) ? (string.length === 2) ? [string, string[1] + string[0]] : [string] :
     string.split('').reduce((acc, letter, i) =>
         acc.concat(findAnagrams(string.slice(0, i) + string.slice(i + 1)).map(val => letter + val)),[]
     );
