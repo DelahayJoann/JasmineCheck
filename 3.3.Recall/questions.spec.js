@@ -213,6 +213,11 @@ describe('javascript-Recall', () => {
         for (let anagram of expectedAnagrams3) {
             expect(result3).toContain(anagram);
         }
+        let result4 = findAnagrams('lol');
+        let expectedAnagrams4 = ["lol", "llo", "oll"];
+        for (let anagram of expectedAnagrams4) {
+            expect(result4).toContain(anagram);
+        }
     });
 
     it('converts Fahrenheit to Celsius rounding to the nearest integer', () => {
