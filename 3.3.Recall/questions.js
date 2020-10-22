@@ -83,7 +83,7 @@ let getAllLetters = (array) => {
 }
 
 let swapKeysAndValues = (object) => {
-    return ;
+    return Object.fromEntries(Object.entries(object).map(a => {tmp = a[1]; a[1]=a[0]; a[0]=tmp; return a;}));
 }
 
 let sumKeysAndValues = (object) => {
@@ -103,33 +103,36 @@ let formatDateNicely = (date) => {
 }
 
 let getDomainName = (string) => {
-    return string.split('@','.')[2];
+    return string.substring(string.lastIndexOf("@") + 1, string.lastIndexOf("."));
 }
 
 let titleize = (string) => {
-    return ;
+    return string.split('. ').map((w)=>w[0].toUpperCase() + w.slice(1)).join('. ').replace(/[a-z]{4,}/g , w => w[0].toUpperCase() + w.slice(1));
 }
 
 let checkForSpecialCharacters = (string) => {
-    return ;
+    return (string.match(/\W/))?true:false;
 }
 
 let squareRoot = (number) => {
-    return ;
+    return Math.sqrt(number);
 }
 
 let factorial = (number) => {
-    return ;
+    return (number==1 || number==0) ? 1: number * factorial(number - 1);
 }
 
 let findAnagrams = (string) => {
-    return ;
+    return (string.length <= 2)? string.length === 2 ? [string, string[1] + string[0]] : [string] :
+    string.split('').reduce((acc, letter, i) =>
+        acc.concat(findAnagrams(string.slice(0, i) + string.slice(i + 1)).map(val => letter + val)),[]
+    );
 }
 
 let convertToCelsius = (number) => {
-    return ;
+    return Math.round((number - 32) * 5 / 9);
 }
 
 let letterPosition = (array) => {
-    return ;
+    return array.map(n => n.toLowerCase().charCodeAt(0)-96);
 }

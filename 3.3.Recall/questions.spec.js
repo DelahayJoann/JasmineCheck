@@ -208,6 +208,11 @@ describe('javascript-Recall', () => {
         for (let anagram of expectedAnagrams2) {
             expect(result2).toContain(anagram);
         }
+        let result3 = findAnagrams('mado');
+        let expectedAnagrams3 = ["admo", "amdo", "damo", "dmao", "mado", "mdao", "adom", "amod", "daom", "dmoa", "maod", "mdoa","aodm", "aomd", "doam", "doma", "moad", "moda", "oadm", "oamd", "odam", "odma", "omad", "omda"];
+        for (let anagram of expectedAnagrams3) {
+            expect(result3).toContain(anagram);
+        }
     });
 
     it('converts Fahrenheit to Celsius rounding to the nearest integer', () => {
